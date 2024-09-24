@@ -18,3 +18,9 @@ console.clear();
 function getInnerTextById(id) {
     return parseFloat(document.getElementById(id).innerText) || 0;
 }
+
+
+// Function to get the value from input and convert it into a number
+function getInputValueById(id) {
+    return parseFloat(document.getElementById(id).value) || 0;
+}

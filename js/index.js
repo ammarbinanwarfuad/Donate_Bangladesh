@@ -71,6 +71,7 @@ document
 
       // Add to transaction history
       addToTransactionHistory(inputNoakhali, "Noakhali, Bangladesh");
+      showPopUp();
     } else {
       alert("Invalid Donation Amount");
     }
@@ -97,6 +98,7 @@ document
 
       // Add to transaction history
       addToTransactionHistory(inputFeni, "Feni, Bangladesh");
+      showPopUp();
     } else {
       alert("Invalid Donation Amount");
     }
@@ -123,6 +125,7 @@ document
 
       // Add to transaction history
       addToTransactionHistory(inputQuota, "Quota, Bangladesh");
+      showPopUp();
     } else {
       alert("Invalid Donation Amount");
     }
@@ -160,3 +163,17 @@ function addToTransactionHistory(donate, location) {
   // New Div to history Container
   document.getElementById("historyContainer").appendChild(div);
 }
+
+
+// Function for popup thanks message
+const donatePopUp = document.getElementById('popup');
+
+// Function to show the modal
+function showPopUp() {
+  donatePopUp.classList.remove('hidden');
+}
+
+// Function to hide the modal
+document.getElementById('closepopup').addEventListener('click', function () {
+  donatePopUp.classList.add('hidden');
+});

@@ -1,0 +1,8 @@
+.primaryButton{
+    background-color: rgb(180, 244,97);
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}

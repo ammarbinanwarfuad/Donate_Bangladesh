@@ -68,6 +68,9 @@ document
       document.getElementById("totalBalance").innerText = newBalance;
       document.getElementById("donatedNoakhali").innerText =
         updateDonatedNoakhali;
+
+      // Add to transaction history
+      addToTransactionHistory(inputNoakhali, "Noakhali, Bangladesh");
     } else {
       alert("Invalid Donation Amount");
     }
@@ -91,6 +94,9 @@ document
       // Update the Website
       document.getElementById("totalBalance").innerText = newBalance;
       document.getElementById("donatedFeni").innerText = updateDonatedFeni;
+
+      // Add to transaction history
+      addToTransactionHistory(inputFeni, "Feni, Bangladesh");
     } else {
       alert("Invalid Donation Amount");
     }
@@ -114,7 +120,43 @@ document
       // Update the Website
       document.getElementById("totalBalance").innerText = newBalance;
       document.getElementById("donatedQuota").innerText = updateDonatedQuota;
+
+      // Add to transaction history
+      addToTransactionHistory(inputQuota, "Quota, Bangladesh");
     } else {
       alert("Invalid Donation Amount");
     }
   });
+
+//Function for Transaction History
+function addToTransactionHistory(donate, location) {
+  let currentTime = new Date();
+  let options = {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  };
+  let formattedDate = currentTime.toLocaleString("en-US", options);
+
+  // New Div
+  const div = document.createElement("div");
+  div.classList.add(
+    "p-5",
+    "m-5",
+    "rounded-md",
+    "border",
+    "border-gray-300",
+    "shadow-sm"
+  ); // Added rounded corners
+
+  // Inner HTML of the new div
+  div.innerHTML = `
+        <p class="text-2xl font-bold">${donate} Taka is donated for famine-2024 at ${location}</p>
+        <p>Date: ${formattedDate} GMT+6 (Bangladesh Standard Time)</p>
+    `;
+
+  // New Div to history Container
+  document.getElementById("historyContainer").appendChild(div);
+}

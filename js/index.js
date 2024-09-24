@@ -83,3 +83,20 @@ document.getElementById("donateButtonFeni").addEventListener("click", function(e
         alert("Invalid Donation Amount");
     }
 });
+
+// Donation logic for Quota
+document.getElementById("donateButtonQuota").addEventListener("click", function(event) {
+    event.preventDefault();
+
+    let totalBalance = getInnerTextById("totalBalance");
+    let inputQuota = getInputValueById("inputQuota");
+    let donatedQuota = getInnerTextById("donatedQuota");
+
+    // Check if donation amount is valid
+    if (inputQuota > 0 && inputQuota <= totalBalance) {
+        let newBalance = totalBalance - inputQuota;
+        let updateDonatedQuota = donatedQuota + inputQuota;
+    } else {
+        alert("Invalid Donation Amount");
+    }
+});

@@ -47,3 +47,22 @@ document.getElementById("historyButton").addEventListener("click", function () {
   document.getElementById("quota").classList.add("hidden");
   document.getElementById("historyContainer").classList.remove("hidden");
 });
+
+
+
+//Donation Logic For Noakhali
+document.getElementById("donateButtonNoakhali").addEventListener("click", function(event) {
+    event.preventDefault();
+
+    let totalBalance = getInnerTextById("totalBalance");
+    let inputNoakhali = getInputValueById("inputNoakhali");
+    let donatedNoakhali = getInnerTextById("donatedNoakhali");
+
+    // Check if donation amount is valid or not
+    if (inputNoakhali > 0 && inputNoakhali <= totalBalance) {
+        let newBalance = totalBalance - inputNoakhali;
+        let updateDonatedNoakhali = donatedNoakhali + inputNoakhali;
+    } else {
+        alert("Invalid Donation Amount");
+    }
+});

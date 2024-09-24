@@ -26,6 +26,7 @@ function getInputValueById(id) {
 }
 
 // Two Buttons Behavior
+//Donation Button
 document.getElementById("donationButton").addEventListener("click", function () {
     document.getElementById("donationButton").classList.add("primaryButton");
     document.getElementById("historyButton").classList.remove("primaryButton");
@@ -35,4 +36,14 @@ document.getElementById("donationButton").addEventListener("click", function () 
   document.getElementById("feni").classList.remove("hidden");
   document.getElementById("quota").classList.remove("hidden");
   document.getElementById("historyContainer").classList.add("hidden");
+});
+//History Button
+document.getElementById("historyButton").addEventListener("click", function () {
+    document.getElementById("donationButton").classList.remove("primaryButton");
+    document.getElementById("historyButton").classList.add("primaryButton");
+//safely add remove to all parts
+  document.getElementById("noakhali").classList.add("hidden");
+  document.getElementById("feni").classList.add("hidden");
+  document.getElementById("quota").classList.add("hidden");
+  document.getElementById("historyContainer").classList.remove("hidden");
 });

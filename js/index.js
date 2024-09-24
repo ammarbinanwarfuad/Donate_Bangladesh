@@ -66,3 +66,20 @@ document.getElementById("donateButtonNoakhali").addEventListener("click", functi
         alert("Invalid Donation Amount");
     }
 });
+
+// Donation logic for Feni
+document.getElementById("donateButtonFeni").addEventListener("click", function(event) {
+    event.preventDefault();
+
+    let totalBalance = getInnerTextById("totalBalance");
+    let inputFeni = getInputValueById("inputFeni");
+    let donatedFeni = getInnerTextById("donatedFeni");
+
+    // Check if donation amount is valid
+    if (inputFeni > 0 && inputFeni <= totalBalance) {
+        let newBalance = totalBalance - inputFeni;
+        let updateDonatedFeni = donatedFeni + inputFeni;
+    } else {
+        alert("Invalid Donation Amount");
+    }
+});

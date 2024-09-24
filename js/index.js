@@ -16,42 +16,43 @@ console.clear();
 
 //Function to get inner text and convert it into a number
 function getInnerTextById(id) {
-    return parseFloat(document.getElementById(id).innerText) || 0;
+  return parseFloat(document.getElementById(id).innerText) || 0;
 }
-
 
 // Function to get the value from input and convert it into a number
 function getInputValueById(id) {
-    return parseFloat(document.getElementById(id).value) || 0;
+  return parseFloat(document.getElementById(id).value) || 0;
 }
 
 // Two Buttons Behavior
 //Donation Button
-document.getElementById("donationButton").addEventListener("click", function () {
+document
+  .getElementById("donationButton")
+  .addEventListener("click", function () {
     document.getElementById("donationButton").classList.add("primaryButton");
     document.getElementById("historyButton").classList.remove("primaryButton");
 
     //safely delete hidden class from all parts
     document.getElementById("noakhali").classList.remove("hidden");
-  document.getElementById("feni").classList.remove("hidden");
-  document.getElementById("quota").classList.remove("hidden");
-  document.getElementById("historyContainer").classList.add("hidden");
-});
+    document.getElementById("feni").classList.remove("hidden");
+    document.getElementById("quota").classList.remove("hidden");
+    document.getElementById("historyContainer").classList.add("hidden");
+  });
 //History Button
 document.getElementById("historyButton").addEventListener("click", function () {
-    document.getElementById("donationButton").classList.remove("primaryButton");
-    document.getElementById("historyButton").classList.add("primaryButton");
-//safely add remove to all parts
+  document.getElementById("donationButton").classList.remove("primaryButton");
+  document.getElementById("historyButton").classList.add("primaryButton");
+  //safely add remove to all parts
   document.getElementById("noakhali").classList.add("hidden");
   document.getElementById("feni").classList.add("hidden");
   document.getElementById("quota").classList.add("hidden");
   document.getElementById("historyContainer").classList.remove("hidden");
 });
 
-
-
 //Donation Logic For Noakhali
-document.getElementById("donateButtonNoakhali").addEventListener("click", function(event) {
+document
+  .getElementById("donateButtonNoakhali")
+  .addEventListener("click", function (event) {
     event.preventDefault();
 
     let totalBalance = getInnerTextById("totalBalance");
@@ -60,15 +61,22 @@ document.getElementById("donateButtonNoakhali").addEventListener("click", functi
 
     // Check if donation amount is valid or not
     if (inputNoakhali > 0 && inputNoakhali <= totalBalance) {
-        let newBalance = totalBalance - inputNoakhali;
-        let updateDonatedNoakhali = donatedNoakhali + inputNoakhali;
+      let newBalance = totalBalance - inputNoakhali;
+      let updateDonatedNoakhali = donatedNoakhali + inputNoakhali;
+
+      // Update the Website
+      document.getElementById("totalBalance").innerText = newBalance;
+      document.getElementById("donatedNoakhali").innerText =
+        updateDonatedNoakhali;
     } else {
-        alert("Invalid Donation Amount");
+      alert("Invalid Donation Amount");
     }
-});
+  });
 
 // Donation logic for Feni
-document.getElementById("donateButtonFeni").addEventListener("click", function(event) {
+document
+  .getElementById("donateButtonFeni")
+  .addEventListener("click", function (event) {
     event.preventDefault();
 
     let totalBalance = getInnerTextById("totalBalance");
@@ -77,15 +85,21 @@ document.getElementById("donateButtonFeni").addEventListener("click", function(e
 
     // Check if donation amount is valid
     if (inputFeni > 0 && inputFeni <= totalBalance) {
-        let newBalance = totalBalance - inputFeni;
-        let updateDonatedFeni = donatedFeni + inputFeni;
+      let newBalance = totalBalance - inputFeni;
+      let updateDonatedFeni = donatedFeni + inputFeni;
+
+      // Update the Website
+      document.getElementById("totalBalance").innerText = newBalance;
+      document.getElementById("donatedFeni").innerText = updateDonatedFeni;
     } else {
-        alert("Invalid Donation Amount");
+      alert("Invalid Donation Amount");
     }
-});
+  });
 
 // Donation logic for Quota
-document.getElementById("donateButtonQuota").addEventListener("click", function(event) {
+document
+  .getElementById("donateButtonQuota")
+  .addEventListener("click", function (event) {
     event.preventDefault();
 
     let totalBalance = getInnerTextById("totalBalance");
@@ -94,9 +108,13 @@ document.getElementById("donateButtonQuota").addEventListener("click", function(
 
     // Check if donation amount is valid
     if (inputQuota > 0 && inputQuota <= totalBalance) {
-        let newBalance = totalBalance - inputQuota;
-        let updateDonatedQuota = donatedQuota + inputQuota;
+      let newBalance = totalBalance - inputQuota;
+      let updateDonatedQuota = donatedQuota + inputQuota;
+
+      // Update the Website
+      document.getElementById("totalBalance").innerText = newBalance;
+      document.getElementById("donatedQuota").innerText = updateDonatedQuota;
     } else {
-        alert("Invalid Donation Amount");
+      alert("Invalid Donation Amount");
     }
-});
+  });

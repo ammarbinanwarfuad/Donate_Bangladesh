@@ -53,21 +53,76 @@
       </div>
     </header>
 
-
     <!-- Main Section Starts Here -->
-        <!-- Two Buttons Starts Here -->
-        <section class="button_holder sticky top-[4rem] z-50 bg-white bg-opacity-70 backdrop-blur-md py-1">
-            <!-- Extra Two buttons For Home -->
-            <div class="flex justify-center gap-5 m-10">
-              <button class="primaryButton px-3 py-2 border border-gray-400 rounded-md" id="donationButton">
-                Donation
-              </button>
-              <button class="px-3 py-2 border border-gray-400 rounded-md" id="historyButton">
-                History
-              </button>
-            </div>
-          </section>
-        <!-- Two Buttons Ends Here -->
-    <!-- Main Section Ends Here -->
+    <main>
+      <!-- Two Buttons Starts Here -->
+      <section
+        class="button_holder sticky top-[4rem] z-50 bg-white bg-opacity-70 backdrop-blur-md py-1"
+      >
+        <!-- Extra Two buttons For Home -->
+        <div class="flex justify-center gap-5 m-10">
+          <button
+            class="primaryButton px-3 py-2 border border-gray-400 rounded-md"
+            id="donationButton"
+          >
+            Donation
+          </button>
+          <button
+            class="px-3 py-2 border border-gray-400 rounded-md"
+            id="historyButton"
+          >
+            History
+          </button>
+        </div>
+      </section>
+      <!-- Two Buttons Ends Here -->
+        <!-- Cards Section Starts Here -->
+        <section class="cards mt-20">
+            <!-- Card 1 Starts Here -->
+            <div class="card lg:card-side bg-base-100 shadow-xl border border-gray-200" id="noakhali">
+                <!-- Image Section -->
+                <figure class="p-4 lg:p-10">
+                  <img class="w-full" src="assets/noakhali.png" alt="Noakhali Flood Picture" />
+                </figure>
+        
+                <!-- Card Body -->
+                <div class="card-body w-full lg:w-3/4">
+                  <!-- Donation Amount Part -->
+                  <div class="flex items-center gap-2 bg-gray-100 w-5/12 lg:w-3/12 p-2 rounded-md">
+                    <img src="assets/coin.png" alt="Logo Coin" class="w-6 h-6" />
+                    <h3 class="font-bold" id="donatedNoakhali">0</h3>
+                    <h3 class="font-bold">BDT</h3>
+                  </div>
+        
+                  <!-- Card Title -->
+                  <h2 class="card-title font-bold text-black mt-4">
+                    Donate for Flood at Noakhali, Bangladesh
+                  </h2>
+        
+                  <!-- Card Donation Description -->
+                  <p class="mt-2 text-gray-700">
+                    The recent floods in Noakhali have caused significant damage to homes and infrastructure. Your donation will
+                    help
+                    provide essential supplies to those affected by this disaster. Every contribution, big or small, makes a
+                    difference. Please join us in supporting the relief efforts and making a positive impact on the lives of
+                    those in
+                    need.
+                  </p>
+        
+                  <!-- Input Amount -->
+                  <input type="number" id="inputNoakhali" placeholder="Enter Donation Amount"
+                    class="border border-gray-500 rounded-md p-2 mt-4 lg:mt-6 w-full" />
+        
+                  <!-- Button -->
+                  <div class="w-full mt-4 lg:mt-6">
+                    <button class="primaryButton p-2 w-full font-bold rounded-md" id="donateButtonNoakhali">Donate Now</button>
+                  </div>
+                </div>
+              </div>
+            <!-- Card 1 Ends Here -->
+        </section>
+        <!-- Cards Section Ends Here -->
+      <!-- Main Section Ends Here -->
+    </main>
   </body>
 </html>

@@ -164,16 +164,15 @@ function addToTransactionHistory(donate, location) {
   document.getElementById("historyContainer").appendChild(div);
 }
 
-
 // Function for popup thanks message
-const donatePopUp = document.getElementById('popup');
+const donatePopUp = document.getElementById("popup");
 
 // Function to show the modal
 function showPopUp() {
-  donatePopUp.classList.remove('hidden');
+  donatePopUp.classList.remove("hidden");
 }
 
 // Function to hide the modal
-document.getElementById('closepopup').addEventListener('click', function () {
-  donatePopUp.classList.add('hidden');
+document.getElementById("closepopup").addEventListener("click", function () {
+  donatePopUp.classList.add("hidden");
 });

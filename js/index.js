@@ -24,3 +24,15 @@ function getInnerTextById(id) {
 function getInputValueById(id) {
     return parseFloat(document.getElementById(id).value) || 0;
 }
+
+// Two Buttons Behavior
+document.getElementById("donationButton").addEventListener("click", function () {
+    document.getElementById("donationButton").classList.add("primaryButton");
+    document.getElementById("historyButton").classList.remove("primaryButton");
+
+    //safely delete hidden class from all parts
+    document.getElementById("noakhali").classList.remove("hidden");
+  document.getElementById("feni").classList.remove("hidden");
+  document.getElementById("quota").classList.remove("hidden");
+  document.getElementById("historyContainer").classList.add("hidden");
+});

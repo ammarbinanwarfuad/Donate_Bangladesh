@@ -70,7 +70,7 @@ document
         updateDonatedNoakhali;
 
       // Add to transaction history
-      addToTransactionHistory(inputNoakhali, "Noakhali, Bangladesh");
+      addToTransactionHistory(inputNoakhali, "famine-2024 at Noakhali, Bangladesh");
       showPopUp();
     } else {
       alert("Invalid Donation Amount");
@@ -97,7 +97,7 @@ document
       document.getElementById("donatedFeni").innerText = updateDonatedFeni;
 
       // Add to transaction history
-      addToTransactionHistory(inputFeni, "Feni, Bangladesh");
+      addToTransactionHistory(inputFeni, "Flood Relief in Feni, Bangladesh");
       showPopUp();
     } else {
       alert("Invalid Donation Amount");
@@ -124,7 +124,7 @@ document
       document.getElementById("donatedQuota").innerText = updateDonatedQuota;
 
       // Add to transaction history
-      addToTransactionHistory(inputQuota, "Quota, Bangladesh");
+      addToTransactionHistory(inputQuota, "Aid for Injured in the Quota Movement, Bangladesh");
       showPopUp();
     } else {
       alert("Invalid Donation Amount");
@@ -156,7 +156,7 @@ function addToTransactionHistory(donate, location) {
 
   // Inner HTML of the new div
   div.innerHTML = `
-        <p class="text-2xl font-bold">${donate} Taka is donated for famine-2024 at ${location}</p>
+        <p class="text-2xl font-bold">${donate} Taka is donated for ${location}</p>
         <p>Date: ${formattedDate} GMT+6 (Bangladesh Standard Time)</p>
     `;
 

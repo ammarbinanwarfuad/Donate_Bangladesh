@@ -60,7 +60,7 @@ document
     let donatedNoakhali = getInnerTextById("donatedNoakhali");
 
     // Check if donation amount is valid or not
-    if (inputNoakhali > 0 && inputNoakhali <= totalBalance) {
+    if (inputNoakhali > 0 && inputNoakhali <= totalBalance && !isNaN(inputNoakhali)) {
       let newBalance = totalBalance - inputNoakhali;
       let updateDonatedNoakhali = donatedNoakhali + inputNoakhali;
 
@@ -69,8 +69,11 @@ document
       document.getElementById("donatedNoakhali").innerText =
         updateDonatedNoakhali;
 
+      // Clear input field
+      document.getElementById("inputNoakhali").value = "";
+
       // Add to transaction history
-      addToTransactionHistory(inputNoakhali, "famine-2024 at Noakhali, Bangladesh");
+      addToTransactionHistory(inputNoakhali, "Flood at Noakhali, Bangladesh");
       showPopUp();
     } else {
       alert("Invalid Donation Amount");
@@ -88,13 +91,16 @@ document
     let donatedFeni = getInnerTextById("donatedFeni");
 
     // Check if donation amount is valid
-    if (inputFeni > 0 && inputFeni <= totalBalance) {
+    if (inputFeni > 0 && inputFeni <= totalBalance && !isNaN(inputFeni)) {
       let newBalance = totalBalance - inputFeni;
       let updateDonatedFeni = donatedFeni + inputFeni;
 
       // Update the Website
       document.getElementById("totalBalance").innerText = newBalance;
       document.getElementById("donatedFeni").innerText = updateDonatedFeni;
+
+      // Clear input field
+      document.getElementById("inputFeni").value = "";
 
       // Add to transaction history
       addToTransactionHistory(inputFeni, "Flood Relief in Feni, Bangladesh");
@@ -115,13 +121,16 @@ document
     let donatedQuota = getInnerTextById("donatedQuota");
 
     // Check if donation amount is valid
-    if (inputQuota > 0 && inputQuota <= totalBalance) {
+    if (inputQuota > 0 && inputQuota <= totalBalance && !isNaN(inputQuota)) {
       let newBalance = totalBalance - inputQuota;
       let updateDonatedQuota = donatedQuota + inputQuota;
 
       // Update the Website
       document.getElementById("totalBalance").innerText = newBalance;
       document.getElementById("donatedQuota").innerText = updateDonatedQuota;
+
+      // Clear input field
+      document.getElementById("inputQuota").value = "";
 
       // Add to transaction history
       addToTransactionHistory(inputQuota, "Aid for Injured in the Quota Movement, Bangladesh");
